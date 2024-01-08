@@ -1,9 +1,19 @@
 package ru.hh.school.entity;
 
-//TODO: оформите entity
-public class Area {
-  private Integer id;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+//TODO: оформите entity
+@Entity
+public class Area {
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "area_id")
+  private Integer id;
+  @Column(name = "name")
   private String name;
 
   public String getName() {
